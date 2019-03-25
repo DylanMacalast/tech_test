@@ -3,3 +3,7 @@ body{
     margin: 0 auto;
     font-family: "open sans";
 }
+
+ .active {
+font-size: 28px;
+}
