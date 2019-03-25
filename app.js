@@ -1,17 +1,40 @@
-// const document = document.querySelector('body');
+getData = async () => {
+    const result =  await fetch("data/shows.JSON");
+    const resultJson = await result.json();
+    return resultJson;
+}
 
-// getData = () => {
-//     fetch(./data.json);
-// }
+createList = async () => {
+    const data = await getData();
+    const theEvents = data.map(event => {
+        return (
+            `<li> ${event.date.dayOfWeek} ${event.location}  </li> 
+            <li> ${event.date.dayOfMonth} ${event.date.month}</li> <br>
+            `
+        );
+
+    });
+    attachedToBody(theEvents);
+};
+
+attachedToBody = (data) => {
+    const body = document.querySelector('.list');
+    body.insertAdjacentHTML('beforeend', data);
+};
 
 
-// createGenres = () => {
-//     const data = getData();
+createList();
 
-//     const theEvents = data.map(events => {
-//         <li>
-//             ${events.name}
-//             ${events.name}
-//         </li>        
-//     });
-// }
+
+
+getGenre = async () => {
+    const data = await getData();
+    const getGenre = data.map(e => {
+        return e.genre;
+    });
+
+    console.log(getGenre);
+};
+
+getGenre();
+
