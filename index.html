@@ -10,16 +10,37 @@
     <title>tech_test</title>
 </head>
 <body>
+    <section class="header">
+        <img class="header__logo" src="./img/logo.svg">
+        <h1 class="header__title">Find a Show!</h1>
+    </section>
 
-    <button onclick="activeLink()" id="all">All</button>
-    <button onclick="activeLink()" id="folk">Folk</button>
-    <button id="rock">Rock</button>
-    <button id="jazz">Jazz</button>
+    <div class="container main__container">
+            <section class="nav">
+                    <div class="nav__container ">
+                        <div class="btn-group text-center">
+                            <button class="nav__btn" id="folk">Folk</button>
+                            <button class="nav__btn " id="rock">Rock</button>
+                            <button class="nav__btn" id="jazz">Jazz</button>
+                            <button class="nav__btn--active" id="all">All</button>
+                        </div>
+                    </div>
+                </section>
+            
+                <section class="genre__list">
+                    <div class="genre__container">
+                        <ul class="list">
+                        </ul>
+                    </div>
+                </section>
+    </div>
+    
+
+   
 
 
 
-    <ul class="list">
-    </ul>
+    
     
     <script src="app.js"></script>
 </body>

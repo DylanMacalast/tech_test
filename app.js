@@ -9,11 +9,6 @@ folk.addEventListener('click', () => createList('folk'));
 all.addEventListener('click', () => createList(''));
 
 
-
-activeLink = () => {
-
-}
-
 getData = async () => {
     const result =  await fetch("data/shows.JSON");
     const resultJson = await result.json();
@@ -28,7 +23,6 @@ clearData = () => {
 
 
 
-
 // genre as a parameter.
 createList = async (genreToFilterBy) => {
     clearData();
@@ -40,8 +34,13 @@ createList = async (genreToFilterBy) => {
 
     const theEvents = dataToBeMapped.map(event => {
         return (
-            `<li> ${event.date.dayOfWeek} ${event.location}  </li> 
-            <li> ${event.date.dayOfMonth} ${event.date.month}</li> <br>
+            `<li class="genre__item"> 
+            <span class="genre__item--day">${event.date.dayOfWeek}</span> 
+            <span class="genre__item--location">${event.location}</span> 
+             <span class="genre__item--date">${event.date.dayOfMonth}</span> 
+              <span class="genre__item--month">${event.date.month} </span>
+              <a href="#"class="genre__item--next"><img class="genre__item--arrow" src="./img/arrow.svg"></a>
+              </li> 
             `
         );
     });
