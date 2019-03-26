@@ -82,14 +82,81 @@ body{
 
 .genre__item{
     border: 1px solid grey;
+    border-radius: 3px;
     margin: 0 auto;
     width: 42vw;
     margin-left: 17vw;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 80px;
+    align-content: center;
+    padding-top: 0;
 }
 
 .genre__item--arrow{
-    height: 30px;
+    width: 15px;
+    order: 10;
+    margin-top: 25px;
+    margin-right: 10px;
 
+
+
+
+}
+
+.genre__item--date{
+    font-size: 28px;
+    font-weight: 600;
+    align-self: flex-start;
+    position: absolute; 
+
+
+
+}
+
+.genre__item--month{
+    align-self: flex-end;
+    font-size: 24px;
+
+    
+
+}
+
+.genre__item--location{
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    padding-top: 28px;
+}
+
+.genre__item--day{
+    color: grey;
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: .5px;
+    position: absolute;
+    padding-top: 10px;
+
+}
+
+#big__container{
+    order: -2;
+    display: flex;
+    justify-content: start;
+    text-align: center;
+    align-content: center;
+    width: 400px;
+    padding-left: 20px;
+}
+
+#small__container{
+    order: -3;
+    border-right: 1px solid grey;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    width: 80px;
 }
 
 
