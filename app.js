@@ -3,6 +3,10 @@ const rock = document.getElementById('rock');
 const folk = document.getElementById('folk');
 const all = document.getElementById('all');
 
+const elements = [
+    jazz, rock, folk
+];
+
 jazz.addEventListener('click', () => createList('jazz'));
 rock.addEventListener('click', () => createList('rock'));
 folk.addEventListener('click', () => createList('folk'));
@@ -18,6 +22,10 @@ getData = async () => {
 
 clearData = () => {
     document.querySelector('.list').innerHTML = '';
+
+    elements.forEach(element =>{
+        element.classList.remove('nav__btn--active');
+    });
   
 }
 
@@ -26,6 +34,12 @@ clearData = () => {
 // genre as a parameter.
 createList = async (genreToFilterBy) => {
     clearData();
+    if(genreToFilterBy === ''){
+        document.getElementById('all').classList.add('nav__btn--active');
+    } else {
+        document.getElementById('all').classList.remove('nav__btn--active');
+        document.getElementById([genreToFilterBy]).classList.toggle('nav__btn--active');
+    }
     const data = await getData();
     const filteredData = data.filter(event => event.genre === genreToFilterBy);
     console.log(filteredData);
