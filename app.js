@@ -49,21 +49,20 @@ createList = async (genreToFilterBy) => {
     const theEvents = dataToBeMapped.map(event => {
         return (
             `<li class="genre__item"> 
-            <span id="big__container">
-            <span class="genre__item--day">${event.date.dayOfWeek}</span> 
-            <span class="genre__item--location">${event.location}</span> 
-            </span>
-            <span id="small__container">
-             <span class="genre__item--date">${event.date.dayOfMonth}</span> 
-              <span class="genre__item--month">${event.date.month} </span>
-              </span>
-              <a href="#"class="genre__item--next"><img class="genre__item--arrow" src="./img/arrow.svg"></a>
-              </li> 
-            `
+                <span id="big__container">
+                    <span class="genre__item--day">${event.date.dayOfWeek}</span> 
+                    <span class="genre__item--location">${event.location}</span> 
+                </span>
+                    <span id="small__container">
+                    <span class="genre__item--date">${event.date.dayOfMonth}</span> 
+                <span class="genre__item--month">${event.date.month} </span>
+                </span>
+                <a href="#"class="genre__item--next"><img class="genre__item--arrow" src="./img/arrow.svg"></a>
+            </li>`
         );
     });
-    
-    attachedToBody(theEvents);
+
+    attachedToBody(theEvents);  
 };
 
 attachedToBody = (data) => {
